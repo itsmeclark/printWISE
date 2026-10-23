@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrintWise | Student Printing Service at Cebu Eastern College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css">
+<script type="module" src="https://pyscript.net/releases/2025.8.1/core.js"></script>
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#home"><img src="/PrintWise CMYK Logo Badge.png" alt="PrintWise" style="height: 60px;width: 60px; border-radius: 50%;">PrintWise</a>
+  <nav>
+    <a href="#order">Get a quote</a><a href="#prices">Prices</a><a href="#about">About</a>
+  </nav>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div>
+    <h1>Print it on campus. Pay only for the pages you need.</h1>
+    <p class="lead">PrintWise is a student printing service for Cebu Eastern College. Send your file, pick black-and-white or color, and pick up your pages between classes.</p>
+    <p class="chips"><span>B&amp;W from ₱1.00</span><span>Color from ₱3.00</span><span>Short, A4 and Long</span></p>
+  </div>
+
+  <form id="order-form" class="card quote" autocomplete="off">
+    <h2>Order and price check</h2>
+    <label>Your name <input id="o-name" class="order-input" required></label>
+    <label>Course and year <input id="o-course" class="order-input" placeholder="BSIT 3"></label>
+    <label>File name <input id="o-file" class="order-input" placeholder="research-chapter-1.pdf"></label>
+    <div class="row">
+      <label>Print type
+        <select id="o-type" class="order-input">
+          <option value="bw">Black &amp; white (₱1.00)</option>
+          <option value="color">Colored (₱3.00)</option>
+          <option value="photo">Full-color / photo (₱5.00)</option>
+        </select></label>
+      <label>Paper
+        <select id="o-size" class="order-input"><option>Short</option><option>A4</option><option>Long</option></select></label>
+    </div>
+    <div class="row">
+      <label>Pages <input id="o-pages" class="order-input" type="number" min="1" value="10"></label>
+      <label>Copies <input id="o-copies" class="order-input" type="number" min="1" value="1"></label>
+    </div>
+    <div class="total"><span id="o-summary">10 pages</span><strong id="o-total">₱10.00</strong></div>
+    <p id="o-msg" class="msg" role="status"></p>
+    <button type="submit">Place order</button>
+  </form>
+</section>
+
+<section id="queue-section" class="wrap">
+  <h2>Today's print queue</h2>
+  <div class="stats"><div><strong id="q-count">0</strong> orders</div><div><strong id="q-pages">0</strong> pages</div><div><strong id="q-sales">₱0.00</strong> sales</div></div>
+  <ul id="queue" class="queue"><li class="empty">No orders yet. Place an order above and it will show up here.</li></ul>
+  <button id="clear-queue" class="ghost">Clear queue</button>
+</section>
+
+<section id="prices" class="wrap">
+  <h2>Prices students told us were fair</h2>
+  <p class="sub">Based on our survey of 30 CEC students: 66.7% called ₱1.00 reasonable for black-and-white, and 46.7% each chose ₱3.00 and ₱5.00 for color.</p>
+  <div class="grid3">
+    <article class="card p-k"><h3>Black &amp; white</h3><p class="price">₱1.00<small> / page</small></p><p>Assignments, forms, reviewers, and reports.</p></article>
+    <article class="card p-c"><h3>Colored</h3><p class="price">₱3.00<small> / page</small></p><p>Presentations, charts, and project documents.</p></article>
+    <article class="card p-m"><h3>Full-color / photo</h3><p class="price">₱5.00<small> / page</small></p><p>Image-heavy pages, posters, and photo printing.</p></article>
+  </div>
+  <h3 class="mt">What PrintWise fixes</h3>
+  <ul class="plain">
+    <li><b>No printer at home.</b> Print on campus instead.</li>
+    <li><b>Long lines before deadlines.</b> Send files digitally and skip the wait.</li>
+    <li><b>Trips off campus.</b> Pick up your pages near your classes.</li>
+    <li><b>Surprise prices.</b> Check your total before you order.</li>
+    <li><b>Formatting problems.</b> We check your file before printing to avoid wasted paper.</li>
+  </ul>
+</section>
+
+
+
+<section id="about" class="wrap">
+  <h2>About PrintWise</h2>
+  <p>PrintWise is a student project of BSIT 3 Section 4, College of Information Technology, Cebu Eastern College. Instructor: Vincent John Cababan.</p>
+  <p class="team">Clark Layos · Jerome Macalua · Vincemar Tecson · Jamir Bayrante · Gevirick Vincent Cabilao</p>
+</section>
+</main>
+<footer>© 2026 PrintWise · Event-Driven Programming final project, built with PyScript</footer>
+
+<script type="py" src="./main.py" config="./pyscript.toml"></script>
+</body>
+</html>
